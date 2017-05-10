@@ -208,7 +208,7 @@ namespace GeographyProgram
                             }
                             else
                             {
-                                if (grade < .6)
+                                if (grade < .594)
                                 {
                                     label3.Text += " F";
                                 }
