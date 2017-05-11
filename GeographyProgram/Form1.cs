@@ -16,8 +16,6 @@ namespace GeographyProgram
         {
             InitializeComponent();
         }
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Width = 500;
@@ -33,18 +31,14 @@ namespace GeographyProgram
             radioButton4.Visible = false;
         }
         float correct = 0f; //values to be used to grade the quiz
-       
         int counter = 0; // this is what will keep track of what question you are on so it can switch to the next one once the user presses the button
-
         private void button1_Click(object sender, EventArgs e)
         {
-            //re-enable crossed out answers for the next question
-            radioButton1.Enabled = true;
+            radioButton1.Enabled = true; //re-enables crossed out answers for the next question
             radioButton2.Enabled = true;
             radioButton3.Enabled = true;
             radioButton4.Enabled = true;
-                    
-            //maybe try to make a right click to disable the radioButton to simulate crossing out the answer. ex: on right click, if radioButton1.Enabled = false then enable, else radioButton1.Enable = false
+
             if (counter == 1 && radioButton4.Checked == true)
             {
                 correct++;
@@ -77,7 +71,6 @@ namespace GeographyProgram
             {
                 correct++;
             }
-
             counter++; //increment the counter each time the button is presses so the program knows what question it needs to display
 
             this.Width = 888;
@@ -101,9 +94,8 @@ namespace GeographyProgram
                 radioButton1.Text = "28";
                 radioButton2.Text = "51";
                 radioButton3.Text = "36";
-                radioButton4.Text = "44";                         
+                radioButton4.Text = "44";
             }
-
             if (counter == 2)
             {
                 label2.Text = "How many countries are in \r\nAsia?";
@@ -114,9 +106,8 @@ namespace GeographyProgram
                 radioButton1.Text = "35";
                 radioButton2.Text = "48";
                 radioButton3.Text = "62";
-                radioButton4.Text = "54";           
+                radioButton4.Text = "54";
             }
-
             if (counter == 3)
             {
                 label2.Text = "How many countries are in \r\nAntarctica?";
@@ -125,7 +116,7 @@ namespace GeographyProgram
                 radioButton1.Text = "1";
                 radioButton2.Text = "2";
                 radioButton3.Text = "6";
-                radioButton4.Text = "0";             
+                radioButton4.Text = "0";
             }
             if (counter == 4)
             {
@@ -135,7 +126,7 @@ namespace GeographyProgram
                 radioButton1.Text = "23";
                 radioButton2.Text = "3";
                 radioButton3.Text = "17";
-                radioButton4.Text = "11";         
+                radioButton4.Text = "11";
             }
             if (counter == 5)
             {
@@ -145,7 +136,7 @@ namespace GeographyProgram
                 radioButton1.Text = "8";
                 radioButton2.Text = "15";
                 radioButton3.Text = "12";
-                radioButton4.Text = "19";            
+                radioButton4.Text = "19";
             }
             if (counter == 6)
             {
@@ -155,7 +146,7 @@ namespace GeographyProgram
                 radioButton1.Text = "68";
                 radioButton2.Text = "39";
                 radioButton3.Text = "27";
-                radioButton4.Text = "54";          
+                radioButton4.Text = "54";
             }
             if (counter == 7)
             {
@@ -165,7 +156,7 @@ namespace GeographyProgram
                 radioButton1.Text = "3";
                 radioButton2.Text = "1";
                 radioButton3.Text = "5";
-                radioButton4.Text = "0";              
+                radioButton4.Text = "0";
             }
             if (counter == 8)
             {
@@ -176,11 +167,11 @@ namespace GeographyProgram
                 radioButton3.Text = "155";
                 radioButton4.Text = "113";
                 label4.Text = correct + "/8\r\nCorrect";
-                button1.Text = "Click to Finish";              
+                button1.Text = "Click to Finish";
             }
             if (counter == 9)
             {
-                float grade = correct / (counter-1);
+                float grade = correct / (counter - 1);
                 label3.Text += "\r\n" + grade * 100 + "%\r\nGrade:";
                 label4.Text = correct + "/8\r\nCorrect";
                 button1.Text = "Click to Retry";
@@ -208,7 +199,7 @@ namespace GeographyProgram
                             }
                             else
                             {
-                                if (grade < .6)
+                                if (grade <= .594)
                                 {
                                     label3.Text += " F";
                                 }
@@ -217,14 +208,12 @@ namespace GeographyProgram
                     }
                 }
             }
-        
+
             if (counter == 10)
             {
                 Application.Restart();
             }
         }
-
-
 
         //section for right click disabling of answers
         private void l_MouseUp(object sender, MouseEventArgs e)
@@ -234,7 +223,6 @@ namespace GeographyProgram
                 radioButton1.Enabled = false;
             }
         }
-
         private void radioButton2_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -242,7 +230,6 @@ namespace GeographyProgram
                 radioButton2.Enabled = false;
             }
         }
-
         private void radioButton3_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -250,7 +237,6 @@ namespace GeographyProgram
                 radioButton3.Enabled = false;
             }
         }
-
         private void radioButton4_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -265,7 +251,6 @@ namespace GeographyProgram
             radioButton3.Enabled = true;
             radioButton4.Enabled = true;
         }
-
     }
 }
 
